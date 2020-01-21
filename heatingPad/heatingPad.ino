@@ -1,5 +1,3 @@
-#define btoa(x) ((x)?"true":"false")
-
 int temperaturePin = 0;
 int heatingPins[] = {9, 10};
 int alertPin = 12;
@@ -13,7 +11,6 @@ const int DEGREES = 100;
 bool isHeatingOn = false;
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
   pinMode(alertPin, OUTPUT);
   for (int i = 0; i < sizeof(heatingPins); i++) {
@@ -22,7 +19,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   float temperature = getTemperature(temperaturePin);
   Serial.print("Temperature: ");
   Serial.println(temperature);
